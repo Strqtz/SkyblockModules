@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "sbm",
+    "name": "SkyblockModules",
+    "description": "A Minecraft Mod With Many Useful Features for the Popular Minigame Hypixel Skyblock",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://strqtz.github.io",
+    "updateUrl": "",
+    "authorList": ["Strqtz"],
+    "credits": "Strqtz#9972",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
