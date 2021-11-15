@@ -1,11 +1,15 @@
 package com.strqtz.skyblockmodules.commands;
 
+import com.strqtz.skyblockmodules.utils.ConfigHandler;
+import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.event.HoverEvent;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IChatComponent;
 
 import java.util.Collection;
@@ -30,11 +34,23 @@ public class SkyblockModulesCommand extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-        String txt = "--------------Skyblock Modules Help--------------" + "\n" + "help";
+        String helptxt = EnumChatFormatting.DARK_PURPLE + "---------------" + EnumChatFormatting.GOLD + "Skyblock Modules Help" + EnumChatFormatting.DARK_PURPLE + "---------------" + "\n" + EnumChatFormatting.LIGHT_PURPLE+ "-" + EnumChatFormatting.GREEN + "help " + EnumChatFormatting.GOLD + "Usage = " + "/help <command>";
 
-        IChatComponent chatComponent = new ChatComponentText(txt);
+        IChatComponent helpchatComponent = new ChatComponentText(helptxt);
 
-        sender.addChatMessage(chatComponent);
+        if(args.length > 0) {
+            if(args[0].equalsIgnoreCase("help")) {
+                sender.addChatMessage(helpchatComponent);
+            } else if(args[0].equalsIgnoreCase("setkey")) {
+                String key = args[1];
+                ConfigHandler.writeStringConfig("api", "apiKey", key);
+                IChatComponent hoverkey = new ChatComponentText(EnumChatFormatting.AQUA + key);
+                IChatComponent chat = new ChatComponentText(EnumChatFormatting.DARK_PURPLE + "Set your API key to " + EnumChatFormatting.GOLD + key);
+                HoverEvent hoverApi = new HoverEvent(HoverEvent.Action.SHOW_TEXT, hoverkey);
+                chat.getChatStyle().setChatHoverEvent(hoverApi);
+                sender.addChatMessage(chat);
+            }
+        }
     }
 
     @Override
