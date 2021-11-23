@@ -34,7 +34,7 @@ public class SkyblockModulesCommand extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-        String helptxt = EnumChatFormatting.DARK_PURPLE + "---------------" + EnumChatFormatting.GOLD + "Skyblock Modules Help" + EnumChatFormatting.DARK_PURPLE + "---------------" + "\n" + EnumChatFormatting.LIGHT_PURPLE+ "-" + EnumChatFormatting.GREEN + "help " + EnumChatFormatting.GOLD + "Usage = " + "/help <command>";
+        String helptxt = EnumChatFormatting.DARK_PURPLE + "---------------" + EnumChatFormatting.GOLD + "Skyblock Modules Help" + EnumChatFormatting.DARK_PURPLE + "---------------" + "\n" + EnumChatFormatting.LIGHT_PURPLE+ "-" + EnumChatFormatting.GREEN + "help " + EnumChatFormatting.GOLD + "Usage = " + "/help <command>" + "\n" + EnumChatFormatting.LIGHT_PURPLE+ "-" + EnumChatFormatting.GREEN + "sbdungeons" + EnumChatFormatting.GOLD + "Usage = " + "/sbdungeons [player]";
 
         IChatComponent helpchatComponent = new ChatComponentText(helptxt);
 
