@@ -10,5 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SkyblockModulesGUI extends GuiScreen {
+    public static void initGUI() {
 
+    }
 }
